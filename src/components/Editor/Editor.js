@@ -15,25 +15,20 @@ export default function Editor({
   setFont,
 }) {
   const titleHandler = (event) => {
-    // console.log(event.target.value);
     setTitle(event.target.value);
   };
   const subtitleHandler = (event) => {
-    // console.log(event.target.value);
     setSubtitle(event.target.value);
   };
 
   const textHandler = (event) => {
-    // console.log(event.target.value);
     setText(event.target.value);
   };
 
   const alignmentHandler = (event) => {
-    // console.log(event.target);
     setAlignment(event.target.value);
   };
   const fontHandler = (event) => {
-    console.log(event.target.value);
     setFont(event.target.value);
   };
 
@@ -64,15 +59,20 @@ export default function Editor({
         <label>Alignment</label>
         <div className="radio-group" onChange={alignmentHandler}>
           <label>
-            <input name="align" type="radio" value="left" checked={alignment === 'left'} />
+            <input name="align" type="radio" value="left" defaultChecked={alignment === 'left'} />
             <i className="ri-align-left"></i>
           </label>
           <label>
-            <input name="align" type="radio" value="center" checked={alignment === 'center'} />
+            <input
+              name="align"
+              type="radio"
+              value="center"
+              defaultChecked={alignment === 'center'}
+            />
             <i className="ri-align-center"></i>
           </label>
           <label>
-            <input name="align" type="radio" value="right" checked={alignment === 'right'} />
+            <input name="align" type="radio" value="right" defaultChecked={alignment === 'right'} />
             <i className="ri-align-right"></i>
           </label>
         </div>

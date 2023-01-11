@@ -11,7 +11,7 @@ export default function Home() {
   const [title, setTitle] = useState('');
   const [subtitle, setSubtitle] = useState('');
   const [text, setText] = useState('');
-  const [alignment, setAlignment] = useState('right');
+  const [alignment, setAlignment] = useState('center');
   const [font, setFont] = useState('architect');
   return (
     <main>
