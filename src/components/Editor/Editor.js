@@ -11,6 +11,8 @@ export default function Editor({
   setText,
   alignment,
   setAlignment,
+  font,
+  setFont,
 }) {
   const titleHandler = (event) => {
     // console.log(event.target.value);
@@ -30,6 +32,10 @@ export default function Editor({
     // console.log(event.target);
     setAlignment(event.target.value);
   };
+  const fontHandler = (event) => {
+    console.log(event.target.value);
+    setFont(event.target.value);
+  };
 
   return (
     <div className="editor">
@@ -42,7 +48,7 @@ export default function Editor({
         <label>Subtitle</label>
       </div>
       <div className="form-control">
-        <select>
+        <select value={font} onChange={fontHandler}>
           <option value="architect">{"Architect's Daughter"}</option>
           <option value="comforter">Comforter</option>
           <option value="fredoka">Fredoka</option>
@@ -58,15 +64,15 @@ export default function Editor({
         <label>Alignment</label>
         <div className="radio-group" onChange={alignmentHandler}>
           <label>
-            <input name="align" type="radio" value="left" />
+            <input name="align" type="radio" value="left" checked={alignment === 'left'} />
             <i className="ri-align-left"></i>
           </label>
           <label>
-            <input name="align" type="radio" value="center" />
+            <input name="align" type="radio" value="center" checked={alignment === 'center'} />
             <i className="ri-align-center"></i>
           </label>
           <label>
-            <input name="align" type="radio" value="right" />
+            <input name="align" type="radio" value="right" checked={alignment === 'right'} />
             <i className="ri-align-right"></i>
           </label>
         </div>
