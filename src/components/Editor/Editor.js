@@ -57,9 +57,15 @@ export default function Editor({
       </div>
       <div className="form-control">
         <label>Alignment</label>
-        <div className="radio-group" onChange={alignmentHandler}>
+        <div className="radio-group">
           <label>
-            <input name="align" type="radio" value="left" defaultChecked={alignment === 'left'} />
+            <input
+              name="align"
+              type="radio"
+              value="left"
+              checked={alignment === 'left'}
+              onChange={alignmentHandler}
+            />
             <i className="ri-align-left"></i>
           </label>
           <label>
@@ -67,12 +73,19 @@ export default function Editor({
               name="align"
               type="radio"
               value="center"
-              defaultChecked={alignment === 'center'}
+              checked={alignment === 'center'}
+              onChange={alignmentHandler}
             />
             <i className="ri-align-center"></i>
           </label>
           <label>
-            <input name="align" type="radio" value="right" defaultChecked={alignment === 'right'} />
+            <input
+              name="align"
+              type="radio"
+              value="right"
+              checked={alignment === 'right'}
+              onChange={alignmentHandler}
+            />
             <i className="ri-align-right"></i>
           </label>
         </div>
